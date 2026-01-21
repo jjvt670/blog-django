@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %} {% block title %} {{ post.title }} {% endblock %}
+{% block content %}
+<article class="post">
+  <h1>{{ post.title }}</h1>
+
+  {% if post.category %}
+  <p><strong>Categoría:</strong> {{ post.category.name }}</p>
+  {% endif %}
+
+  <p>{{ post.content }}</p>
+
+  <a href="{% url 'post_list' %}">← Volver al blog</a>
+</article>
+{% endblock %}
